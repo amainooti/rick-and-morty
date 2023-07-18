@@ -1,0 +1,272 @@
+:root {
+  --numeric: #f08d49;
+  --good: #41bd6e;
+  --keyword: #66d9ef;
+  --punctuation: #abb2bf;
+  --background: #202329;
+  --radius: 6px;
+  --inline-background: #08090a0d;
+  --inline-color: #476582;
+  --bad: rgb(146, 8, 8);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  font: 112.5%/1.625 -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+}
+
+body {
+  background-color: #cdcdcd;
+  position: relative;
+  width: 100%;
+}
+
+main {
+  margin-top: 100px;
+}
+
+header {
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  padding: 22px 34px;
+  border-bottom: 1px solid var(--punctuation);
+}
+
+.ri-search-line {
+  display: none;
+}
+nav a {
+  text-decoration: none;
+  color: var(--background);
+}
+
+nav a svg {
+  fill: #000;
+}
+
+[type="search"] {
+  padding: 18px;
+  box-sizing: border-box;
+  background-color: inherit;
+  border: 1px solid #000;
+  border-radius: 22px;
+  display: block;
+}
+
+.c-search-scroll {
+  position: absolute;
+  right: 12px;
+  top: 80px;
+  height: 200px;
+  width: 240px;
+  overflow-y: scroll;
+  z-index: 9999;
+  display: flex;
+  border-radius: 12px;
+  flex-direction: column;
+  display: none;
+  align-items: center;
+  padding: 20px 0;
+  background-color: white;
+}
+
+.c-search-scroll ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.c-search-name {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.c-search-item-image {
+  width: 40px;
+  height: 40px;
+  padding-left: 4px;
+  border-radius: 50%;
+}
+
+.c-search-scroll ul li {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  list-style: none;
+  padding: 12px 0;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--background);
+    color: white;
+  }
+}
+
+.c-search-scroll::-webkit-scrollbar {
+  width: 0;
+}
+
+.c-card_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.c-card {
+  margin: 50px auto;
+  width: 530px;
+  display: flex;
+  gap: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.c-card .c-image-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+ .c-card .c-image-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+}
+
+.c-card .c-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+
+
+.c-card .c-text-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.c-card .c-text-container h1 {
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+
+.c-text-container p {
+  white-space: nowrap;
+}
+
+.c-rick-morty-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-dot-good {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--good);
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-dot-bad {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--bad);
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.c-rick-morty-container h1 {
+  font-size: 4rem;
+  white-space: nowrap;
+  margin: 0;
+  font-weight: 700;
+  border: none;
+}
+
+.sub-heads {
+  color: var(--punctuation)
+}
+
+@media screen and (max-width: 1200px) {
+  .c-rick-morty-container h1 {
+    font-size: 3rem;
+  }
+
+  .c-card {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 950px) {
+  [type="search"]{
+    display: none;
+  }
+  .ri-search-line {
+    display: block;
+  }
+  .c-rick-morty-container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .c-rick-morty-container h1 {
+    font-size: 1.25rem;
+  }
+
+  .c-card_container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .c-card {
+    width: calc(100% - 40px);
+    max-width: 500px;
+  }
+
+  .c-card .c-text-container h1 {
+    font-size: 1rem;
+  }
+  .c-card .c-text-container p {
+    font-size: 0.7rem;
+  }
+}
+
